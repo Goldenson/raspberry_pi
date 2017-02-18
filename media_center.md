@@ -80,7 +80,7 @@ And add it to your crontab
 
 ## Workflow
 
-1- Send file through `scp` : `scp ~/Downloads/torrent osmc@192.168.1.32:/media/Elements/OSMC/Downloads`
-2- Add a torrent manually: `transmission-remote --auth=osmc:osmc -a /media/Elements/OSMC/Downloads/torrents/your_torrent`
-3- Remove the first tracker: `transmission-remote --auth=osmc:osmc -l | grep \% | awk '{print $1}' | xargs -n 1 -I \% transmission-remote --auth=osmc:osmc -t \% -tr 0`
-4- Remove torrent from transmission `transmission-remote --auth osmc:osmc -l | grep 100\% | grep Done | awk '{print $1}' | xargs -n 1 -I \% transmission-remote --auth osmc:osmc -t \% -r` done automatically because transmission execute the script: “/root/mvfile.sh”
+1. Send file through `scp` : `scp ~/Downloads/torrent osmc@192.168.1.32:/media/Elements/OSMC/Downloads`
+2. Add a torrent manually: `transmission-remote --auth=osmc:osmc -a /media/Elements/OSMC/Downloads/torrents/your_torrent`
+3. Remove the first tracker: `transmission-remote --auth=osmc:osmc -l | grep \% | awk '{print $1}' | xargs -n 1 -I \% transmission-remote --auth=osmc:osmc -t \% -tr 0`
+4. Remove torrent from transmission `transmission-remote --auth osmc:osmc -l | grep 100\% | grep Done | awk '{print $1}' | xargs -n 1 -I \% transmission-remote --auth osmc:osmc -t \% -r` done automatically because transmission execute the script: “/root/mvfile.sh”
