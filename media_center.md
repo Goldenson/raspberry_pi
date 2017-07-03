@@ -1,4 +1,4 @@
-# Media Center wiht OSMC on raspberry pi:
+# Media Center with OSMC on raspberry pi:
 
 ## What is a media center ?
 
@@ -57,7 +57,7 @@ Let's create a connection bewteen these two pi's.
 
 ```
 sudo ssh-keygen -t rsa -b 2048
-sudo ssh-copy-id osmc@xxx.xxx.xxx
+sudo ssh-copy-id osmc@xxx.xxx.xxx.xxx
 ```
 
 Congrats!! You can now ssh to your second pi through your first one.
@@ -73,7 +73,17 @@ Now we gonna create a script to send all the data to our second pi
 
 Run tis
 ```
-sudo rsync -avhzrPlt -stats --ignore-existing  osmc@90.127.185.136:/media/Elements/OSMC/Downloads/test/ /media/blablabla/
+sudo rsync -avhzrPlt -stats --ignore-existing  osmc@xxx.xxx.xxx.xxx:/media/Elements/OSMC/Downloads/test/ /media/blablabla/
 ```
 
 And add it to your crontab
+
+## Workflow
+
+Let's say your username and password you're using for transmission is
+`osmc`
+
+1. Send file through `scp` : `scp ~/Downloads/torrent osmc@192.168.1.32:/media/Elements/OSMC/Downloads`
+2. Add a torrent manually: `transmission-remote --auth=osmc:osmc -a /media/Elements/OSMC/Downloads/torrents/your_torrent`
+3. Remove the first tracker: `transmission-remote --auth=osmc:osmc -l | grep \% | awk '{print $1}' | xargs -n 1 -I \% transmission-remote --auth=osmc:osmc -t \% -tr 0`
+4. Remove torrent from transmission `transmission-remote --auth osmc:osmc -l | grep 100\% | grep Done | awk '{print $1}' | xargs -n 1 -I \% transmission-remote --auth osmc:osmc -t \% -r` done automatically because transmission execute the script: “/root/mvfile.sh”
