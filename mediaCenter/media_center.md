@@ -6,7 +6,7 @@
 
 > A media center is basically an interface displaying your media content (Music, Photos and Movies).
 
-## I will rewrite everything with a new fresh config coming soon
+## I will rewrite everything with a new fresh implementation config coming soon
 
 ## What do we need ?
 
