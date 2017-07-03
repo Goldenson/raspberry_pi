@@ -1,0 +1,13 @@
+#EXTM3U
+
+#EXTINF:0 tvg-id="1" tvg-name="Bein 1" tvg-logo="/logo/Bein Sports 1 HD.png" group-title="Sport", Bein 1
+http://cdnv.kcdn.tn/iptv/ch119
+
+#EXTINF:0 tvg-id="2" tvg-name="Bein 2" tvg-logo="logo/Bein Sports 2 HD.png" group-title="Sport", Bein 2
+http://cdnv.kcdn.tn/iptv/ch120
+
+#EXTINF:0 tvg-id="3" tvg-name="Bein 3" tvg-logo="logo/Bein Sports 3 HD.png" group-title="Sport", Bein 3
+http://cdnv.kcdn.tn/iptv/ch206
+
+#EXTINF:0 tvg-id="4" tvg-name="TF1" tvg-logo="logo/TF1.png" group-title="Actualité", TF1 HD
+http://cdnv.kcdn.tn/iptv/ch207
